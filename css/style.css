@@ -204,7 +204,7 @@ body{
     font-weight: bold;
 }
 
-.about-content{
+.about-inner{
     display: flex;
     justify-content: space-between;
 }
@@ -339,4 +339,126 @@ body{
     padding-top: 32px;
     padding-bottom: 32px;
     margin-top: 80px;
+}
+
+/* タブレット版 */
+@media screen and (max-width: 1024px) {
+    .section-inner{
+        max-width: 560px;
+    }
+    /* link-btn */
+    .link-btn span{
+        color: #fff;
+    }
+    .link-btn {
+        position: relative;
+        overflow: hidden;
+        background-color: #C69B1D;
+    }
+    .link-btn::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 100%;
+        position: absolute;
+        top: -180px;
+        left: 0;
+        background-color: #FFF;
+        opacity: 0;
+        transform: rotate(45deg);
+        animation: reflect 2s ease-in-out infinite;
+        -webkit-transform: rotate(45deg);
+        -webkit-animation: reflect 2s ease-in-out infinite;
+    }
+    @keyframes reflect {
+        0% { transform: scale(0) rotate(45deg); opacity: 0; }
+        80% { transform: scale(0) rotate(45deg); opacity: 0.5; }
+        81% { transform: scale(4) rotate(45deg); opacity: 1; }
+        100% { transform: scale(50) rotate(45deg); opacity: 0; }
+    }
+    @-webkit-keyframes reflect {
+        0% { transform: scale(0) rotate(45deg); opacity: 0; }
+        80% { transform: scale(0) rotate(45deg); opacity: 0.5; }
+        81% { transform: scale(4) rotate(45deg); opacity: 1; }
+        100% { transform: scale(50) rotate(45deg); opacity: 0; }
+    }
+
+    .section-btn{
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #C69B1D;
+    }
+    /* header */
+    .header{
+        background: linear-gradient(90deg, #fff 0%, #fff 180px, #1A5EA5 180px, #1A5EA5 100%);
+        padding: 24px;
+    }
+    /* about */
+    .about-inner{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .about-img-box{
+        margin: 0;
+        width: 100%;
+        order: 1;
+    }
+    .about-img{
+        width: 100%;
+    }
+    .about-detail{
+        text-align: left;
+        width: 100%;
+        order: 2;
+    }
+    .about-text{
+        width: 100%;
+        margin: 0 auto;
+    }
+    /* contents */
+    .contents-inner{
+        margin: 0;
+    }
+    .contents-top{
+        margin-right: 0;
+        margin-left: 0;
+        width: 100vw;
+        background: #1A5EA5;
+    }
+    .contents-topinner{
+        width: 560px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .contents-text{
+        width: 560px;
+    }
+    .contents-ul{
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contents-detail{
+        width: 560px;
+    }
+    /* achievement */
+    .achievement-inner{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .achievement-img-box{
+        margin: 0;
+        width: 100%;
+    }
+    .achievement-img{
+        width: 100%;
+    }
+    .achievement-detail{
+        text-align: left;
+        width: 100%;
+    }
+    .achievement-text{
+        width: 100%;
+        margin: 0 auto;
+    }
 }
