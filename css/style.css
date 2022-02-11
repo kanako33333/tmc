@@ -146,6 +146,117 @@ body{
     height:100%;
 }
 
+/* スマホ版ナビ */
+.openbtn1{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	right: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+	
+/*×に変化*/	
+.openbtn1 span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #fff;
+  	width: 45%;
+  }
+
+.openbtn1 span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn1 span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn1.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn1.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+	top:-120%;
+    left:0;
+	width:100%;
+    height: 100vh;/*ナビの高さ*/
+	background:#1A5EA5;
+    opacity: 0.9;
+    /*動き*/
+	transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    top: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+	color: #fff;
+	text-decoration: none;
+	padding:20px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+}
+
 /* mv */
 .mv{
     background-color: #1A5EA5;
@@ -460,5 +571,81 @@ body{
     .achievement-text{
         width: 100%;
         margin: 0 auto;
+    }
+}
+
+/* スマホ版 */
+@media screen and (max-width: 810px){
+    /* section */
+    .section-wrap{
+        padding: 40px 0;
+    }
+    .section-ttl{
+        text-align: center;
+    }
+    .section-text{
+        width: 300px;
+    }
+    /* header */
+    .header{
+        padding: 16px;
+        background: linear-gradient(90deg, #fff 0%, #fff 107px, #1A5EA5 107px, #1A5EA5 100%);
+    }
+    .header-ttl{
+        font-size: 25px;
+    }
+    .header-list{
+        display: none;
+    }
+    /* btn */
+    .section-btn{
+        display: block;
+        text-align: center;
+    }
+    .link-btn{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    /* mv */
+    .company-name{
+        font-size: 6vw;
+        white-space: nowrap;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    /* about */
+    .moving-text{
+        font-size: 50px;
+    }
+    /* contents */
+    .contents-topinner{
+        width: 300px;
+    }
+    .contents-text{
+        width: 300px;
+    }
+    .contents-detail{
+        width: 300px;
+    }
+    /* achievement */
+    .achievement-inner{
+        width: 300px;
+    }
+    .entry-inner{
+        background-position: 0 0;
+    }
+    /* contact */
+    .contact-inner{
+        width: 300px;
+    }
+    .form-btn{
+        display: block;
+    }
+    /* footer */
+    .footer{
+        margin-top: 40px;
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
 }
