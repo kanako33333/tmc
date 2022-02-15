@@ -148,6 +148,7 @@ body{
 
 /* スマホ版ナビ */
 .openbtn1{
+    display: none;
 	position:fixed;
     z-index: 9999;/*ボタンを最前面に*/
 	top:10px;
@@ -596,6 +597,9 @@ body{
     }
     .header-list{
         display: none;
+    }
+    .openbtn1{
+        display: block;
     }
     /* btn */
     .section-btn{
