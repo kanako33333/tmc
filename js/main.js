@@ -51,6 +51,6 @@ function delayScrollAnime() {
 	});
 	
 	$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
-		$(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
+		$(".openbtn1").removeClass('active');//ボタンの activeクラスを除去し
 		$("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 	});
